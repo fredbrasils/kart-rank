@@ -32,51 +32,12 @@ public class CorridaServiceImpl implements CorridaService{
                 
                 RankModel rank_proximo = new RankModel(piloto, UtilCalendar.somaTempo(piloto.getVoltas()), piloto.getVoltas().size());
                 ranquear(rank,rank_proximo,true);
-                
-                /*
-                if(rank_proximo.getQntVoltas() < rank.getQntVoltas()
-                    || (rank_proximo.getQntVoltas() == rank.getQntVoltas() 
-                        && rank.getTempo().getTimeInMillis() < rank_proximo.getTempo().getTimeInMillis()) ){
-                    
-                    //verifica se tem o próximo do rank
-                    if(rank.getProximo() != null){
-                        ranquear(rank,rank_proximo);
-                    }else{
-                        rank.setProximo(rank_proximo);
-                    }
-                }else{
-                    rank_proximo.setProximo(rank);
-                    rank = rank_proximo;
-                }
-                */
             }
         }
         
         corrida.setRank(rank);
         
     }
-    
-    /*
-    private void ranquear(RankModel rank, RankModel rank_proximo){
-
-        // verifica se tem menos volta de quem tá no rank ou 
-        // se tem a mesma quantidade de voltas mais o tempo é maior
-        if(rank_proximo.getQntVoltas() < rank.getProximo().getQntVoltas()
-            || (rank_proximo.getQntVoltas() == rank.getProximo().getQntVoltas() 
-                && rank.getProximo().getTempo().getTimeInMillis() < rank_proximo.getTempo().getTimeInMillis()) ){
-
-            //verifica se tem o próximo do rank
-            if(rank.getProximo().getProximo() != null){
-                ranquear(rank.getProximo(),rank_proximo);
-            }else{
-                rank.getProximo().setProximo(rank_proximo);
-            }
-        }else{
-            rank_proximo.setProximo(rank.getProximo());
-            rank.setProximo(rank_proximo);
-        }
-    }
-    */
     
    /**
    * Ranquea os pilotos da corrida
