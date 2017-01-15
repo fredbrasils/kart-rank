@@ -21,3 +21,11 @@ Instruções para executar:
 
 Abra o arquivo KartRank.java e tecle ALT + SHIFT + X,J ou
 click com o botão direito em cima do arquivo e aperte "Run As -> Java Application".
+ 
+##############################################
+
+Ao executar deve abrir o browser com o uma página HTML exibindo
+o rank da corrida e demais informações.
+
+
+
