@@ -5,8 +5,19 @@ O projeto foi desenvolvido no NetBeans 8.1.
 2 - Abra o NetBeans
 3 - Abra o projeto no NetBeans  
 
-####### Instruções para executar #######
+Instruções para executar:
 
 Abra o arquivo KartRank.java e execute clicando no botão play do menu ou
 SHIFT + F6 ou click com o botão direito em cima do arquivo e aperte "Run File/Executar".
 
+####### Instruções para Rodar no Eclipse #######
+
+1 - Abra o Eclipse e crie um projeto novo.
+2 - Abra a pasta do projeto criado no eclipse 
+3 - Copie as pasta que estão dentro do "src" do projeto baixado para a pasta "src" do projeto criado no Eclipse
+4 - Copie os arquivos ".txt" e ".html" do projeto baixado e para a raiz do projeto criado no eclipse
+
+Instruções para executar:
+
+Abra o arquivo KartRank.java e tecle ALT + SHIFT + X,J ou
+click com o botão direito em cima do arquivo e aperte "Run As -> Java Application".
