@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <title>GP Brasil de F1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+    <body class="w3-light-grey">
+
+        <!-- Top container -->
+        <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
+        </div>
+
+        <!-- !PAGE CONTENT! -->
+        <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+            <!-- Header -->
+            <header class="w3-container" style="padding-top:22px">
+                <h5><b><i class="fa fa-tachometer"></i> GP Brasil</b></h5>
+            </header>
+
+            <div class="w3-container w3-section">
+                <div class="w3-row-padding" style="margin:0 -16px">
+                    <div class="w3-twothird">
+                        <h5><i class="fa fa-list"></i> Rank</h5>
+                        <table class="w3-table w3-striped w3-white">
+                            <thead class="w3-bordered w3-border w3-hoverable w3-blue" >
+                                <td>Posição</td>
+                                <td>Código</td>
+                                <td>Nome</td>
+                                <td>Voltas</td>
+                                <td>Tempo</td>
+                                <td>Diferença</td>
+                                <td>Melhor Volta</td>
+                                <td>Média Vel.</td>
+                            </thead>
+                            
+                            #{rank}
+                                
+                        </table>
+                        
+                        <hr>        
+                        
+                        <h5>Bônus</h5>
+                        <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                            <tr>
+                                <td><i class="fa fa-trophy "></i> Campeão</td>
+                                <td>#{campeao}</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-clock-o "></i> Melhor volta</td>
+                                <td>#{melhorVolta}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            
+            <!-- Footer -->
+            <footer class="w3-container w3-padding-16 w3-light-grey">
+                <h4><i class="fa fa-github "></i> GitHub</h4>
+                <p><a href="https://github.com/fredbrasils" target="_blank">Fred Brasil</a></p>
+            </footer>
+        </div>
+
+    </body>
+</html>

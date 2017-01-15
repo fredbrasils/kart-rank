@@ -1,0 +1,12 @@
+####### Instruções para abrir o projeto #######
+
+O projeto foi desenvolvido no NetBeans 8.1.
+1 - Baixe o projeto
+2 - Abra o NetBeans
+3 - Abra o projeto no NetBeans  
+
+####### Instruções para executar #######
+
+Abra o arquivo KartRank.java e execute clicando no botão play do menu ou
+SHIFT + F6 ou click com o botão direito em cima do arquivo e aperte "Run File/Executar".
+
