@@ -28,7 +28,6 @@ public class CorridaServiceTest {
         Assert.assertEquals(new Long(4), rank.getProximo().getPiloto().getId());
         Assert.assertEquals(new Long(2), rank.getProximo().getProximo().getPiloto().getId());
         Assert.assertEquals(new Long(1), rank.getProximo().getProximo().getProximo().getPiloto().getId());
-        
     }
     
     @Test
@@ -53,13 +52,14 @@ public class CorridaServiceTest {
         CorridaServiceImpl service = new CorridaServiceImpl();
         
         service.rank(corrida);
-        service.diferencaTempoVencedor(corrida.getRank());
+        RankModel rank = corrida.getRank();
+        service.diferencaTempoVencedor(rank);
         
         Assert.assertEquals(new Long(4), corrida.getRank().getProximo().getPiloto().getId());
-        Assert.assertEquals("59:56.0", Utils.tempoFormatado(corrida.getRank().getProximo().getTempoParaLider()));
+        Assert.assertEquals("00:04.0", Utils.tempoFormatado(corrida.getRank().getProximo().getTempoParaLider()));
         
         Assert.assertEquals(new Long(2), corrida.getRank().getProximo().getProximo().getPiloto().getId());
-        Assert.assertEquals("59:55.0", Utils.tempoFormatado(corrida.getRank().getProximo().getProximo().getTempoParaLider()));
+        Assert.assertEquals("00:05.0", Utils.tempoFormatado(corrida.getRank().getProximo().getProximo().getTempoParaLider()));
         
         Assert.assertEquals(new Long(1), corrida.getRank().getProximo().getProximo().getProximo().getPiloto().getId());
         Assert.assertNull(corrida.getRank().getProximo().getProximo().getProximo().getTempoParaLider());

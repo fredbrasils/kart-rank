@@ -4,7 +4,6 @@ package kart.rank.util;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.List;
-import java.util.TimeZone;
 import junit.framework.Assert;
 import kart.rank.builder.VoltaBuilder;
 import kart.rank.model.VoltaModel;

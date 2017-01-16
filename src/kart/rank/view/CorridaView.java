@@ -6,8 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 import kart.rank.model.CorridaModel;
 import kart.rank.model.RankModel;
+import kart.rank.service.CorridaService;
 import kart.rank.service.CorridaServiceImpl;
 import kart.rank.service.LerLogCorridaService;
+import kart.rank.service.PilotoService;
 import kart.rank.service.PilotoServiceImpl;
 import kart.rank.util.Utils;
 
@@ -104,12 +106,12 @@ public class CorridaView extends BaseView{
         LerLogCorridaService rrl = new LerLogCorridaService();
         CorridaModel corrida = rrl.lerLogDaCorrida(LOG_FILE);
         
-        CorridaServiceImpl corridaService = new CorridaServiceImpl();
+        CorridaService corridaService = new CorridaServiceImpl();
         corridaService.rank(corrida);
         corridaService.diferencaTempoVencedor(corrida.getRank());
         corridaService.melhorVolta(corrida);
     
-        PilotoServiceImpl pilotoService = new PilotoServiceImpl();
+        PilotoService pilotoService = new PilotoServiceImpl();
         pilotoService.mediaVelocidadePorPiloto(corrida);
         
         return corrida;

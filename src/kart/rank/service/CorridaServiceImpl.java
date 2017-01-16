@@ -31,7 +31,7 @@ public class CorridaServiceImpl implements CorridaService{
             }else{
                 
                 RankModel rank_proximo = new RankModel(piloto, UtilCalendar.somaTempo(piloto.getVoltas()), piloto.getVoltas().size());
-                ranquear(rank,rank_proximo,true);
+                rank = ranquear(rank,rank_proximo,true);
             }
         }
         
@@ -45,7 +45,7 @@ public class CorridaServiceImpl implements CorridaService{
    * @param rank_proximo piloto a ser adicionado no rank
    * @param primeiroRank flag para validar o primeiro do rank
    */
-    private void ranquear(RankModel rank, RankModel rank_proximo,boolean primeiroRank){
+    private RankModel ranquear(RankModel rank, RankModel rank_proximo,boolean primeiroRank){
 
         RankModel rankAux;
         
@@ -72,9 +72,11 @@ public class CorridaServiceImpl implements CorridaService{
             if(primeiroRank){
                 rankAux = rank_proximo;
                 rank = rankAux;
+            }else{
+                rank.setProximo(rank_proximo);
             }
-            rank.setProximo(rank_proximo);
         }
+        return rank;
     }
     
    /**
@@ -85,7 +87,7 @@ public class CorridaServiceImpl implements CorridaService{
     public void melhorVolta(CorridaModel corrida){
     
         //busca as melhores voltas da corrida por piloto
-        PilotoServiceImpl pilotoService = new PilotoServiceImpl();
+        PilotoService pilotoService = new PilotoServiceImpl();
         pilotoService.melhorVoltaPorPiloto(corrida);
         
         // percorre as melhores voltas da corrida
