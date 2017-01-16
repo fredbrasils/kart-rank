@@ -19,7 +19,7 @@ public class LerLogCorridaServiceTest {
         LerLogCorridaService rrl = new LerLogCorridaService();
         CorridaModel race = rrl.lerLogDaCorrida(LOG_FILE);
         
-        Assert.assertEquals(race.getPilotos().size(), 6);
+        Assert.assertEquals(6, race.getPilotos().size());
         
     }
 }

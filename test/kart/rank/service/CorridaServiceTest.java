@@ -6,6 +6,7 @@ import kart.rank.model.CorridaModel;
 import kart.rank.model.RankModel;
 import kart.rank.util.Utils;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -14,11 +15,16 @@ import org.junit.Test;
  */
 public class CorridaServiceTest {
     
+    private static CorridaModel corrida;
+    
+    @BeforeClass
+    public static void criaCorrida(){
+        corrida = CorridaBuilder.getDefault();
+    }
+    
     @Test
     public void retornaRank(){
     
-        CorridaModel corrida = CorridaBuilder.getDefault();
-        
         CorridaServiceImpl service = new CorridaServiceImpl();
         
         service.rank(corrida);
@@ -33,8 +39,6 @@ public class CorridaServiceTest {
     @Test
     public void retornaAMelhorVoltaDaCorrida(){
     
-        CorridaModel corrida = CorridaBuilder.getDefault();
-        
         CorridaServiceImpl service = new CorridaServiceImpl();
         
         service.melhorVolta(corrida);
@@ -47,8 +51,6 @@ public class CorridaServiceTest {
     @Test
     public void retornaAsDiferecaDeTempoParaLider(){
     
-        CorridaModel corrida = CorridaBuilder.getDefault();
-        
         CorridaServiceImpl service = new CorridaServiceImpl();
         
         service.rank(corrida);

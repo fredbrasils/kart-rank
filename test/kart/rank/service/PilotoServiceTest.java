@@ -8,6 +8,7 @@ import kart.rank.model.CorridaModel;
 import kart.rank.model.PilotoModel;
 import kart.rank.util.Utils;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -16,12 +17,16 @@ import org.junit.Test;
  */
 public class PilotoServiceTest {
     
+    private static CorridaModel corrida;
+    
+    @BeforeClass
+    public static void criaCorrida(){
+        corrida = CorridaBuilder.getDefault();
+    }
 
     @Test
     public void retornaListaComAsMelhoresVoltasPorPiloto(){
     
-        CorridaModel corrida = CorridaBuilder.getDefault();
-        
         PilotoServiceImpl service = new PilotoServiceImpl();
         
         service.melhorVoltaPorPiloto(corrida);
@@ -35,14 +40,11 @@ public class PilotoServiceTest {
         Assert.assertEquals("01:02.769", Utils.tempoFormatado(corrida.getMelhoresVoltasPorPiloto().get(p2).getTempo()));
         Assert.assertEquals("01:01.170",Utils.tempoFormatado(corrida.getMelhoresVoltasPorPiloto().get(p3).getTempo()));
         Assert.assertEquals("01:02.170",Utils.tempoFormatado(corrida.getMelhoresVoltasPorPiloto().get(p4).getTempo()));
-        
     }
     
     @Test
     public void retornaListaComAsMediasDeVelocidadePorPiloto(){
     
-        CorridaModel corrida = CorridaBuilder.getDefault();
-        
         PilotoServiceImpl service = new PilotoServiceImpl();
         
         service.mediaVelocidadePorPiloto(corrida);
@@ -56,6 +58,5 @@ public class PilotoServiceTest {
         Assert.assertEquals(new BigDecimal(35.655).setScale(3,RoundingMode.HALF_EVEN), corrida.getMediaVelocidadePorPiloto().get(p2));
         Assert.assertEquals(new BigDecimal(34.555).setScale(3,RoundingMode.HALF_EVEN), corrida.getMediaVelocidadePorPiloto().get(p3));
         Assert.assertEquals(new BigDecimal(35.305).setScale(3,RoundingMode.HALF_EVEN), corrida.getMediaVelocidadePorPiloto().get(p4));
-        
     }
 }
